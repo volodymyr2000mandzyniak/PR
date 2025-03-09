@@ -10,25 +10,28 @@ Filtering tasks by status
 ## Installation
 
 1. Clone the repository:
+```bash
+git clone https://github.com/volodymyr2000mandzyniak/PR.git
+```
 
-git clone gggggggggggggggggggggggg
-
-2.Install:
+2. Install:
 ```bash
 bundle install rails db:create rails db:migrate
 ```
 
-3.(Optional) Seed the database with sample data
+3. (Optional) Seed the database with sample data
 ```bash
 rails db:seed
 ```
-4.Start the Rails server:
+
+4. Start the Rails server:
 ```bash
 rails server
 ```
-5.Access the API endpoints with Swagger documentation
+
+5. Access the API endpoints with Swagger documentation
 ```bash
-http://localhost:3000/api-docs/index.html
+http://localhost:3000/#
 ```
 or using a tool like Postman or curl.
 
