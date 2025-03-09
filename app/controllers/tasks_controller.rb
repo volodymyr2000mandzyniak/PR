@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_task, only: [:show, :update, :destroy]
   rescue_from ArgumentError, with: :handle_invalid_status
 

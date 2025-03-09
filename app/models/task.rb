@@ -3,7 +3,6 @@ class Task < ApplicationRecord
 
   # before_destroy { project.touch } # Оновлення проекту при видаленні завдання
 
-
   enum status: {
     new: 'new',
     in_progress: 'in_progress', 
