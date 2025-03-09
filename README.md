@@ -1,4 +1,4 @@
-This project is an API for managing projects and tasks.
+#This project is an API for managing projects and tasks.
 
 Features
 User authentication (sign up, sign in, sign out)
