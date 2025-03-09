@@ -1,13 +1,22 @@
-# This project is an API for managing projects and tasks.
+# 🚀 Project and Task Management API
 
-## Features
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)  
+![GitHub stars](https://img.shields.io/github/stars/volodymyr2000mandzyniak/PR?style=social)
 
-User authentication (sign up, sign in, sign out)
-CRUD operations for projects
-CRUD operations for tasks associated with projects
-Filtering tasks by status 
+This project is an API for managing projects and tasks. It provides a convenient way to organize workflows, allowing users to create, edit, delete, and filter projects and tasks.
 
-## Installation
+---
+
+## ✨ Features
+
+- 🔐 **User Authentication**: Sign up, sign in, and sign out.
+- 📂 **CRUD for Projects**: Create, read, update, and delete projects.
+- ✅ **CRUD for Tasks**: Create, read, update, and delete tasks associated with projects.
+- 🔍 **Task Filtering**: Filter tasks by status.
+
+---
+
+## 🛠 Installationon
 
 1. Clone the repository:
 ```bash
@@ -33,12 +42,11 @@ rails server
 ```bash
 http://localhost:3000/#
 ```
-or using a tool like Postman or curl.
+Or use tools like Postman or curl.
 
 
 
+📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
