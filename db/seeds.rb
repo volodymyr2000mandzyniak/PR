@@ -1,22 +1,25 @@
-# Очистимо базу даних перед створенням нових даних
-# Project.destroy_all
-# Task.destroy_all
+# db/seeds.rb
+Task.destroy_all
+Project.destroy_all
 
-# Створимо 5 проектів
-5.times do
-  project = Project.create(
-    name: Faker::App.name,
-    description: Faker::Lorem.paragraph(sentence_count: 4)
+5.times do |i|
+  project = Project.create!(
+    name: "Проект #{i + 1}: #{Faker::App.name}",
+    description: Faker::Lorem.paragraph(sentence_count: 4),
+    created_at: Time.now - rand(1..30).days
   )
 
-  rand(3..5).times do
+  rand(3..5).times do |j|
     Task.create!(
-      name: Faker::Lorem.sentence(word_count: 3),
+      project: project,
+      name: "Завдання #{j + 1}: #{Faker::Lorem.sentence(word_count: 3)}",
       description: Faker::Lorem.paragraph(sentence_count: 2),
-      status: %w[new in_progress completed].sample,
-      project_id: project.id
-    )  
+      status: Task.statuses.keys.sample,
+      created_at: project.created_at + rand(1..24).hours
+    )
   end
 end
 
-puts "Створено #{Project.count} проектів та #{Task.count} завдань."
+puts "Створено:"
+puts "- #{Project.count} проектів"
+puts "- #{Task.count} завдань"
