@@ -31,7 +31,7 @@ end
 group :test do
   gem "rspec-rails"
   gem "rack-test"
-  gem "shoulda-matchers" # Для зручних матчерів (наприклад, для тестування валідацій)
-  gem "database_cleaner-active_record" # Для очищення бази даних після тестів
-  gem "json_spec" # Для роботи з JSON у тестах
+  gem "shoulda-matchers" 
+  gem "database_cleaner-active_record" 
+  gem "json_spec"
 end
