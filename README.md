@@ -16,6 +16,35 @@ This project is an API for managing projects and tasks. It provides a convenient
 
 ---
 
+## 🛠 Technologies
+
+- **Ruby**: `3.2.3`  
+  The programming language used for the project.
+
+- **Ruby on Rails**: `7.2.2`  
+  The web framework used to build the API.
+
+- **PostgreSQL**: `1.1`  
+  The database system for storing data.
+
+- **RSpec**: `6.1.0`  
+  The testing framework for writing unit and integration tests.
+
+- **Swagger**  
+  Used for API documentation and interactive API exploration.
+
+- **Devise**  
+  Handles user authentication (sign up, sign in, sign out).
+
+- **Rack Attack**  
+  Provides throttling and blocking of malicious requests.
+
+- **Devise JWT**  
+  Enables token-based authentication for secure API access.
+
+- **Rack CORS**  
+  Manages Cross-Origin Resource Sharing (CORS) to allow secure cross-domain requests.
+
 ## 🛠 Installationon
 
 1. Clone the repository:
