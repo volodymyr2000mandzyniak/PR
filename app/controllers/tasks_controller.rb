@@ -33,6 +33,16 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.project_id = params[:project_id]
 
+    # Нормалізація та валідація статусу перед збереженням
+    if params[:task][:status].present?
+      normalized_status = normalize_status(params[:task][:status])
+      if valid_status?(normalized_status)
+        @task.status = normalized_status
+      else
+        return render_invalid_status_error
+      end
+    end
+
     if @task.save
       expire_cache_for(@task.project_id)
       render json: @task, serializer: TaskSerializer, status: :created
@@ -44,7 +54,12 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/:id
   def update
     if params[:task][:status].present?
-      params[:task][:status] = normalize_status(params[:task][:status])
+      normalized_status = normalize_status(params[:task][:status])
+      if valid_status?(normalized_status)
+        params[:task][:status] = normalized_status
+      else
+        return render_invalid_status_error
+      end
     end
 
     if @task.update(task_params)
@@ -73,6 +88,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
+  # Нормалізація статусу
   def normalize_status(status)
     status.downcase
   end
@@ -81,6 +97,7 @@ class TasksController < ApplicationController
     params.require(:task).permit(:name, :description, :status)
   end
 
+  # Перевірка валідності статусу
   def valid_status?(status)
     Task.statuses.key?(status)
   end
