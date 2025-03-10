@@ -46,50 +46,65 @@ Or use tools like Postman or curl.
 
 
 
-🌐 API Endpoints
-The API provides the following endpoints:
+## 🌐 API Endpoints
 
-Authentication
-Sign up: POST /users/sign_up
-Register a new user.
+### Authentication
 
-Sign in: POST /users/sign_in
-Authenticate a user and return a JWT token.
+- **Sign up**:  
+  `POST /users/sign_up`  
+  Register a new user.
 
-Sign out: DELETE /users/sign_out
-Invalidate the user's JWT token (log out).
+- **Sign in**:  
+  `POST /users/sign_in`  
+  Authenticate a user and return a JWT token.
 
-Projects
-Retrieve all projects: GET /projects
-Get a list of all projects belonging to the authenticated user.
+- **Sign out**:  
+  `DELETE /users/sign_out`  
+  Invalidate the user's JWT token (log out).
 
-Create a new project: POST /projects
-Create a new project for the authenticated user.
+### Projects
 
-Retrieve a project by ID: GET /projects/:id
-Get details of a specific project belonging to the authenticated user.
+- **Retrieve all projects**:  
+  `GET /projects`  
+  Get a list of all projects belonging to the authenticated user.
 
-Update a project by ID: PUT /projects/:id
-Update details of a specific project belonging to the authenticated user.
+- **Create a new project**:  
+  `POST /projects`  
+  Create a new project for the authenticated user.
 
-Delete a project by ID: DELETE /projects/:id
-Delete a specific project belonging to the authenticated user.
+- **Retrieve a project by ID**:  
+  `GET /projects/:id`  
+  Get details of a specific project belonging to the authenticated user.
 
-Tasks
-Retrieve all tasks associated with a project: GET /projects/:project_id/tasks
-Get a list of all tasks for a specific project belonging to the authenticated user.
+- **Update a project by ID**:  
+  `PUT /projects/:id`  
+  Update details of a specific project belonging to the authenticated user.
 
-Create a new task associated with a project: POST /projects/:project_id/tasks
-Create a new task for a specific project belonging to the authenticated user.
+- **Delete a project by ID**:  
+  `DELETE /projects/:id`  
+  Delete a specific project belonging to the authenticated user.
 
-Retrieve a task by ID associated with a project: GET /tasks/:id
-Get details of a specific task belonging to the authenticated user.
+### Tasks
 
-Update a task by ID associated with a project: PUT /tasks/:id
-Update details of a specific task belonging to the authenticated user.
+- **Retrieve all tasks associated with a project**:  
+  `GET /projects/:project_id/tasks`  
+  Get a list of all tasks for a specific project belonging to the authenticated user.
 
-Delete a task by ID associated with a project: DELETE /tasks/:id
-Delete a specific task belonging to the authenticated user.
+- **Create a new task associated with a project**:  
+  `POST /projects/:project_id/tasks`  
+  Create a new task for a specific project belonging to the authenticated user.
+
+- **Retrieve a task by ID associated with a project**:  
+  `GET /tasks/:id`  
+  Get details of a specific task belonging to the authenticated user.
+
+- **Update a task by ID associated with a project**:  
+  `PUT /tasks/:id`  
+  Update details of a specific task belonging to the authenticated user.
+
+- **Delete a task by ID associated with a project**:  
+  `DELETE /tasks/:id`  
+  Delete a specific task belonging to the authenticated user.
 
 📄 License
 This project is licensed under the MIT License. See the LICENSE file for details.
