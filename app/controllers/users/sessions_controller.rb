@@ -6,12 +6,20 @@ class Users::SessionsController < Devise::SessionsController
 
   private
 
-  def respond_with(resource, _opts = {})
+def respond_with(resource, _opts = {})
+  Rails.logger.info "Resource: #{resource.inspect}"
+  Rails.logger.info "Resource persisted?: #{resource.persisted?}"
+  if resource.persisted?
     render json: {
       status: { code: 200, message: 'Logged in successfully.' },
       data: { user: resource }
     }, status: :ok
+  else
+    render json: {
+      status: { code: 401, message: 'Invalid Email or password.' }
+    }, status: :unauthorized
   end
+end
 
   def respond_to_on_destroy
     if request.headers['Authorization'].present?
@@ -22,7 +30,7 @@ class Users::SessionsController < Devise::SessionsController
         current_user = User.find(jwt_payload['sub'])
 
         if current_user
-          current_user.update(jti: SecureRandom.uuid)
+          current_user.update(jti: SecureRandom.uuid) # Інвалідація старого токену
           render json: {
             status: 200,
             message: 'Logged out successfully.'

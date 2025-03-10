@@ -13,6 +13,7 @@ gem "rack-attack"
 # Serialization
 gem "active_model_serializers"
 
+# Authentication
 gem 'devise'
 gem 'simple_token_authentication'
 gem 'devise-jwt'
@@ -30,4 +31,7 @@ end
 group :test do
   gem "rspec-rails"
   gem "rack-test"
+  gem "shoulda-matchers" # Для зручних матчерів (наприклад, для тестування валідацій)
+  gem "database_cleaner-active_record" # Для очищення бази даних після тестів
+  gem "json_spec" # Для роботи з JSON у тестах
 end
